@@ -4,15 +4,16 @@ import { twMerge } from "tailwind-merge";
 
 const lora = Lora({ subsets: ["latin"] });
 
-const HeaderButton = (props: ComponentProps<"button">) => (
-  <button
+const HeaderButton = (props: ComponentProps<"a">) => (
+  <a
     style={{
       color: "#5D758D",
     }}
+    {...props}
     className={twMerge("text-base ", lora.className)}
   >
     {props.children}
-  </button>
+  </a>
 );
 
 const HeaderContainer = ({ children, ...props }: ComponentProps<"button">) => {

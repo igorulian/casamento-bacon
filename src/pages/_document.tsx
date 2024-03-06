@@ -8,15 +8,9 @@ export default function Document() {
       <Head title="Casamento Bacon" />
       <body>
         <Header.Container>
-          <Header.Button>Cerimonia</Header.Button>
-          <Header.Button>Local</Header.Button>
-          <Header.Button
-            onClick={() => {
-              window.location.href = "/presentes";
-            }}
-          >
-            Presentes
-          </Header.Button>
+          <Header.Button href="/">Cerimonia</Header.Button>
+          <Header.Button href="/">Local</Header.Button>
+          <Header.Button href="presentes">Presentes</Header.Button>
         </Header.Container>
         <Main />
         <NextScript />

@@ -161,6 +161,7 @@ export default function Home() {
       <Section.Container className="bg-primary-light h-auto justify-center items-center p-8 pt-4">
         <div className="flex flex-col items-center">
           <Image
+            priority
             className="w-10 rotate-90 scale-x-[-1]"
             src={require("../assets/fro_branca.svg")}
             alt="fro"

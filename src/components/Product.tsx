@@ -1,12 +1,18 @@
 import Image from "next/image";
 
-const Produto = () => {
+const Produto = ({ product }: { product: { name: string; price: number } }) => {
   return (
-    <div className="flex justify-end flex-col items-center p-4 rounded-lg bg-white h-80 min-w-52 max-w-56">
-      <Image alt="A" src={""} className="w-100 bg-black h-100" />
-      <span className="text-zinc-800">Presente maneiro</span>
-      <span className="text-zinc-800">R$100</span>
-      <button className="flex text-lg items-center justify-center w-full p-4 h-12 text-white bg-primary rounded-lg">
+    <div className="flex justify-between flex-col items-center p-4 rounded-lg bg-white h-auto w-40 sm:w-56 ">
+      <Image
+        alt="A"
+        src={require("../assets/gifts/gift_1.jpg")}
+        className="w-100 bg-black h-100 rounded-md"
+      />
+      <span className="text-color-txt text-sm mt-2 text-center">
+        {product.name}
+      </span>
+      <span className="text-base mb-2 text-color-txt">R${product.price}</span>
+      <button className="flex text-lg items-center justify-center w-full p-2 text-white bg-primary rounded-lg">
         Presentear
       </button>
     </div>

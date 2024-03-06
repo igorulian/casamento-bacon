@@ -3,6 +3,7 @@ import { Lora } from "next/font/google";
 import localFont from "next/font/local";
 import Section from "@/components/Section";
 import { twMerge } from "tailwind-merge";
+import { useEffect, useState } from "react";
 
 const lora = Lora({ subsets: ["latin"] });
 
@@ -16,7 +17,26 @@ const gistesy = localFont({
   ],
 });
 
+const targetDate = new Date("2024-06-07T16:30:00");
+
 export default function Home() {
+  const [timeLeft, setTimeLeft] = useState(targetDate.getTime() - Date.now());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimeLeft(targetDate.getTime() - Date.now());
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+  const seconds = Math.floor((timeLeft / 1000) % 60);
+
   return (
     <main className="bg-white flex min-h-screen min-w-screen flex-col items-center">
       <Section.Container className="md:flex-row  max-[768px]:max-h-[650px]">
@@ -29,36 +49,34 @@ export default function Home() {
             className="opacity-90 md:h-auto max-[768px]:h-full max-[768px]:max-h-[500px]"
           />
         </div>
-        <div>
-          <div
-            style={{
-              right: -250,
-              marginRight: "33%",
-            }}
-            className="z-10 md:w-[500px] w-full h-[400px] absolute md:top-60 md:left-auto max-[768px]:top-1/2 max-[768px]:left-1/2 max-[768px]:transform max-[768px]:-translate-x-1/2 max-[768px]:-translate-y-1/2 "
-          >
-            <Image
-              className="absolute z-0 right-0 top-0 w-40 rotate-180 scale-x-[-1]"
-              src={require("../assets/fro.svg")}
-              alt="fro"
-            />
-            <div className="bg-white w-full h-full p-8 py-16 z-10 flex flex-col gap-8 justify-between">
-              <h5
-                className={twMerge(
-                  "text-8xl z-10 text-color-txt",
-                  gistesy.className
-                )}
-              >
-                Barbara
-                <br />& Maicon
-              </h5>
-              <div className="flex flex-row items-center gap-4">
-                <Image
-                  src={require("../assets/icons/icon-date-jade.svg")}
-                  alt="icon calendar"
-                />
-                <p className="text-color-txt">09 de Julho de 2024</p>
-              </div>
+        <div
+          style={{
+            right: -250,
+            marginRight: "33%",
+          }}
+          className="z-10 md:w-[500px] w-11/12 h-[400px] absolute md:top-60 md:left-auto max-[768px]:top-1/2 max-[768px]:left-1/2 max-[768px]:transform max-[768px]:-translate-x-1/2 max-[768px]:-translate-y-1/2 "
+        >
+          <Image
+            className="absolute z-0 right-0 top-0 w-40 rotate-180 scale-x-[-1]"
+            src={require("../assets/fro.svg")}
+            alt="fro"
+          />
+          <div className="bg-white w-full h-full p-8 py-16 z-10 flex flex-col gap-8 justify-between">
+            <h5
+              className={twMerge(
+                "max-[368px]:text-7xl text-8xl z-10 text-color-txt",
+                gistesy.className
+              )}
+            >
+              Barbara
+              <br />& Maicon
+            </h5>
+            <div className="flex flex-row items-center gap-4">
+              <Image
+                src={require("../assets/icons/icon-date-jade.svg")}
+                alt="icon calendar"
+              />
+              <p className="text-color-txt">06 de Julho de 2024</p>
             </div>
             <div className="md:w-[500px] w-full h-[400px] absolute bg-primary -z-10 -bottom-2 -right-2" />
           </div>
@@ -78,25 +96,21 @@ export default function Home() {
           </Section.Title>
         </div>
 
-        <div className="flex flex-row gap-4 mt-8">
+        <div className="flex flex-row md:gap-4 gap-2 justify-between md:justify-around w-full md:w-auto mt-8">
           <div className="flex flex-col w-20 h-20 bg-primary items-center text-center text-lg justify-center rounded-lg">
-            <b>01</b>
-            <br />
+            <span className="font-bold">{days}</span>
             <span className="text-xs mt-2">DIAS</span>
           </div>
           <div className="flex flex-col w-20 h-20 bg-primary items-center text-center text-lg justify-center rounded-lg">
-            <b>01</b>
-            <br />
+            <span className="font-bold">{hours}</span>
             <span className="text-xs mt-2">HORAS</span>
           </div>
           <div className="flex flex-col w-20 h-20 bg-primary items-center text-center text-lg justify-center rounded-lg">
-            <b>01</b>
-            <br />
+            <span className="font-bold">{minutes}</span>
             <span className="text-xs mt-2">MINUTOS</span>
           </div>
           <div className="flex flex-col w-20 h-20 bg-primary items-center text-center text-lg justify-center rounded-lg">
-            <b>01</b>
-            <br />
+            <span className="font-bold">{seconds}</span>
             <span className="text-xs mt-2">SEGUNDOS</span>
           </div>
         </div>
@@ -129,6 +143,7 @@ export default function Home() {
           gramado do rancho, deixando nosso dia do jeitinho que sempre sonhamos.
           Tentaremos ser o mais breve e pontuais possível durante a cerimonia.
           Logo após a recepção será no mesmo local.
+          <br />- Traje esporte fino.
         </p>
         <div className="w-full md:max-w-[700px] overflow-hidden aspect-[16/9] bg-slate-600  rounded-lg">
           <iframe
@@ -143,61 +158,107 @@ export default function Home() {
         </p>
       </Section.Container>
 
-      <Section.Container className="bg-sky-200 h-auto justify-center items-center p-8 pt-4">
+      <Section.Container className="bg-primary-light h-auto justify-center items-center p-8 pt-4">
         <div className="flex flex-col items-center">
           <Image
             className="w-10 rotate-90 scale-x-[-1]"
             src={require("../assets/fro_branca.svg")}
             alt="fro"
           />
-          <Section.Title className={`text-color-txt mb-8 ${lora.className}`}>
+          <Section.Title className={`text-white mb-8 ${lora.className}`}>
             CONTATOS
           </Section.Title>
           <div className="flex md:flex-row flex-col items-start gap-12 justify-around overflow-x-auto">
-            <div className="flex flex-col  justify-start align-top text-start">
-              <h4 className={`text-color-txt text-base mb-4 ${lora.className}`}>
+            <div className="flex flex-col gap-4 flex-wrap justify-start align-top text-start w-full md:w-auto">
+              <h4 className={`text-primary text-base mb-4 ${lora.className}`}>
                 Maquiagem e cabelo:
               </h4>
-              <p className="font-bold mt-2">Jaqueline Santiago</p>
-              <p>(17) 98210-7302</p>
-              <p>@jaquelinesantiagomakeup</p>
-              <p className="font-bold mt-2">Fernandes Neto</p>
-              <p>(17) 99245-2246</p>
-              <p>@_fernandes_neto</p>
-              <p className="font-bold mt-2">Yhane Vieira</p>
-              <p>(17) 98156-0007</p>
-              <p>@atelieyhanevieira</p>
-              <p className="font-bold mt-2">StudioCarolMake</p>
-              <p>(17) 99191-6460</p>
-              <p>@carolmakee</p>
+              <div className="flex md:flex-col md:flex-nowrap gap-4 flex-row flex-wrap md:justify-start justify-between">
+                <div className="flex flex-col gap-1">
+                  <p className={`font-bold mt-2 ${lora.className}`}>
+                    Jaqueline Santiago
+                  </p>
+                  <p className="text-sm">(17) 98210-7302</p>
+                  <p className="text-sm">@jaquelinesantiagomakeup</p>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className={`font-bold mt-2 ${lora.className}`}>
+                    Fernandes Neto
+                  </p>
+                  <p className="text-sm">(17) 99245-2246</p>
+                  <p className="text-sm">@_fernandes_neto</p>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className={`font-bold mt-2 ${lora.className}`}>
+                    Yhane Vieira
+                  </p>
+                  <p className="text-sm">(17) 98156-0007</p>
+                  <p className="text-sm">@atelieyhanevieira</p>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className={`font-bold mt-2 ${lora.className}`}>
+                    StudioCarolMake
+                  </p>
+                  <p className="text-sm">(17) 99191-6460</p>
+                  <p className="text-sm">@carolmakee</p>
+                </div>
+              </div>
             </div>
-            <div className="flex flex-col justify-start text-start ">
-              <h4 className={`text-color-txt text-base mb-4 ${lora.className}`}>
+            <div className="flex flex-col justify-start text-start w-full md:w-auto">
+              <h4 className={`text-primary text-base mb-4 ${lora.className}`}>
                 Hotéis:
               </h4>
-
-              <p className="font-bold mt-2">Hotel Portal da Mata</p>
-              <p>(17) 3641-1575</p>
-              <p>@hotelportaldamata</p>
-              <p className="font-bold mt-2">Hotel Santa Fé</p>
-              <p>(17) 99149-2593</p>
-              <p>@hotel_santafe</p>
-              <p className="font-bold mt-2">Hotel Litani</p>
-              <p>(17) 99140-9393</p>
-              <p>@hotel.litani</p>
-              <p className="font-bold mt-2">Hotel San Gennaro</p>
-              <p>(17) 99661-5990</p>
-              <p>@hotelsangennaro</p>
+              <div className="flex md:flex-col md:flex-nowrap md:justify-start md:gap-0 gap-4 flex-row flex-wrap justify-between">
+                <div className="flex flex-col gap-1">
+                  <p className={`font-bold mt-2 ${lora.className}`}>
+                    Hotel Portal da Mata
+                  </p>
+                  <p className="text-sm">(17) 3641-1575</p>
+                  <p className="text-sm">@hotelportaldamata</p>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className={`font-bold mt-2 ${lora.className}`}>
+                    Hotel Santa Fé
+                  </p>
+                  <p className="text-sm">(17) 99149-2593</p>
+                  <p className="text-sm">@hotel_santafe</p>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className={`font-bold mt-2 ${lora.className}`}>
+                    Hotel Litani
+                  </p>
+                  <p className="text-sm">(17) 99140-9393</p>
+                  <p className="text-sm">@hotel.litani</p>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className={`font-bold mt-2 ${lora.className}`}>
+                    Hotel San Gennaro
+                  </p>
+                  <p className="text-sm">(17) 99661-5990</p>
+                  <p className="text-sm">@hotelsangennaro</p>
+                </div>
+              </div>
             </div>
-            <div className="flex flex-col justify-start text-start ">
-              <h4 className={`text-color-txt text-base mb-4 ${lora.className}`}>
+            <div className="flex flex-col justify-start text-start w-full md:w-auto">
+              <h4 className={`text-primary text-base mb-4 ${lora.className}`}>
                 Aplicativos de carona
               </h4>
-              <p className="font-bold mt-2">Sampa Santa Fe do Sul</p>
-              <p>(17) 99603-2221</p>
-              <p>@sampamobilitysantafe</p>
-              <p className="font-bold mt-2">Amigo car</p>
-              <p>@amigocar_</p>
+              <div className="flex md:flex-col md:flex-nowrap md:justify-start md:gap-0 gap-4 flex-row flex-wrap justify-between w-full">
+                <div className="flex flex-col gap-1">
+                  <p className={`font-bold mt-2 ${lora.className}`}>
+                    Sampa Santa Fe do Sul
+                  </p>
+                  <p className="text-sm">(17) 99603-2221</p>
+                  <p className="text-sm">@sampamobilitysantafe</p>
+                </div>
+
+                <div className="flex flex-col gap-1">
+                  <p className={`font-bold mt-2 ${lora.className}`}>
+                    Amigo car
+                  </p>
+                  <p className="text-sm">@amigocar_</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

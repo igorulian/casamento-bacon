@@ -1,18 +1,15 @@
-import { Quicksand } from "next/font/google";
+import { Lora, Quicksand } from "next/font/google";
 import { ComponentProps } from "react";
 import { twMerge } from "tailwind-merge";
 
-const quicksand = Quicksand({
-  weight: "700",
-  subsets: ["latin"],
-});
+const lora = Lora({ subsets: ["latin"] });
 
 const HeaderButton = (props: ComponentProps<"button">) => (
   <button
     style={{
       color: "#5D758D",
     }}
-    className={twMerge("text-base ", quicksand.className)}
+    className={twMerge("text-base ", lora.className)}
   >
     {props.children}
   </button>

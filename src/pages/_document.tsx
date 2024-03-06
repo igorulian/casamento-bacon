@@ -8,11 +8,8 @@ export default function Document() {
       <Head title="Casamento Bacon" />
       <body>
         <Header.Container>
-          <Header.Button>Home</Header.Button>
           <Header.Button>Cerimonia</Header.Button>
-          <Header.Button>Recepção</Header.Button>
           <Header.Button>Local</Header.Button>
-          <Header.Button>Lista de presentes</Header.Button>
           <Header.Button
             onClick={() => {
               window.location.href = "/presentes";

@@ -1,8 +1,20 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
+import { Lora } from "next/font/google";
+import localFont from 'next/font/local'
 import Section from "@/components/Section";
+import { twMerge } from "tailwind-merge";
 
-const inter = Inter({ subsets: ["latin"] });
+const lora = Lora({ subsets: ["latin"] });
+
+const gistesy = localFont({
+  src: [
+    {
+      path: '../assets/fonts/Gistesy.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+})
 
 export default function Home() {
   return (
@@ -27,13 +39,14 @@ export default function Home() {
             right: -250,
             marginRight: "33%",
           }}
-          className="z-10 absolute md:top-60"
+          className="z-10 absolute md:top-60 md:left-auto max-[768px]:top-1/2 max-[768px]:left-1/2 max-[768px]:transform max-[768px]:-translate-x-1/2 max-[768px]:-translate-y-1/2 "
         >
-          <div className="bg-white w-full h-full p-8 z-10">
-            <h5 className="text-6xl text-color-txt">
-              Bárbara
+          <div className="bg-white w-full h-full p-8 py-16 z-10 flex flex-col gap-8 justify-between">
+            <h5 className={twMerge("text-8xl text-color-txt", gistesy.className)}>
+              Barbara
               <br />& Maicon
             </h5>
+            <p className="text-color-txt">09 de Julho de 2024</p>
           </div>
           <div
             style={{
@@ -73,23 +86,29 @@ export default function Home() {
         </div>
       </Section.Container>
 
-      <Section.Container className="bg-white items-center p-8 flex gap-8">
+      <Section.Container className="bg-white items-center  px-0 md:px-40 p-8 flex gap-8">
         <Section.Title className="text-color-txt">
           CERIMONIA E RECEPÇÃO
         </Section.Title>
-        <p className=" text-color-txt text-center">
+        <div className="md:max-w-[700px] relative w-full aspect-[8/6] bg-slate-600 rounded-lg">
+          <Image
+            src={require('../assets/foto_local.jpg')} 
+            alt="Casa bonita"
+            layout="fill"
+            objectFit="cover"
+            className="opacity-85 h-auto"
+          />
+        </div>
+        <p className="text-color-txt text-center md:max-w-[700px]">
           Gostaríamos muito de contar com a presença de todos vocês no momento
           em que nossa união será abençoada diante de Deus.
-          <br />
           Escolhemos o Rancho Art Eventos para esse momento! A cerimonia será
           realizada no amplo gramado do rancho, deixando nosso dia do jeitinho
-          que sempre sonhamos. <br />
+          que sempre sonhamos.
           Tentaremos ser o mais breve e pontuais possível durante a cerimonia.
           Logo após a recepção será no mesmo local.
         </p>
-        <div className="flex w-full px-0 md:px-40">
-          <div className="w-full h-80 bg-slate-600  rounded-lg"></div>
-        </div>
+        <div className="w-full md:max-w-[700px] aspect-[8/6] bg-slate-600  rounded-lg"></div>
         <p className="text-color-txt text-xs">
           Dia 06 de Julho de 2024, as 16:30. Rancho Art Eventos, Rua Tucunaré,
           s/nª, Loteamento Vale do Sol na cidade Santa Fé do Sul - SP.

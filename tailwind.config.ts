@@ -20,7 +20,7 @@ const config: Config = {
       colors: {
         primary: "#0097b2",
         "primary-light": "#67cee0",
-        "color-txt": "#5D758D",
+        "color-txt": "#737373",
       },
     },
   },

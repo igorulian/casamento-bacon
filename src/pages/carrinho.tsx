@@ -81,10 +81,9 @@ const Carrinho = () => {
         </div>
         <div className="flex w-full flex-col mt-4">
           {cart.length > 0 && (
-            <div className="w-full px-4">
-              <p className="w-full text-right text-color-txt">
-                Total: R${total}
-              </p>
+            <div className="flex flex-row justify-end text-lg items-center w-full px-4">
+              <p className=" text-color-txt mr-2">Total:</p>
+              <p className=" text-color-txt">R${total}</p>
             </div>
           )}
           <div className="flex mt-8 w-full flex-row justify-between gap-4 items-center">

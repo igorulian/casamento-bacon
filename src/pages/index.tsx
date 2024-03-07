@@ -5,6 +5,7 @@ import Section from "@/components/Section";
 import { twMerge } from "tailwind-merge";
 import dynamic from "next/dynamic";
 import Footer from "@/components/Footer";
+import Head from "next/head";
 
 const CountDown = dynamic(() => import("@/components/CountDown"), {
   ssr: false,
@@ -25,6 +26,9 @@ const gistesy = localFont({
 export default function Home() {
   return (
     <main className="bg-white flex min-h-screen min-w-screen flex-col items-center">
+      <Head>
+        <title>Casamento Bacon</title>
+      </Head>
       <Section.Container className="md:flex-row  max-[768px]:max-h-[650px]">
         <div className="md:w-full md:relative md:justify-center">
           <Image
@@ -234,7 +238,7 @@ export default function Home() {
         </div>
       </Section.Container>
 
-      <Section.Container className="h-auto min-h-96 py-4">
+      <Section.Container className="h-auto min-h-[500px] py-4">
         <iframe
           src="https://docs.google.com/forms/d/e/1FAIpQLSfccDQoDV7vIavCHSJiwOdq9h2-AT5Z1naa_x8XXEZN3nb34Q/viewform?embedded=true"
           className="w-full border-none outline-none"

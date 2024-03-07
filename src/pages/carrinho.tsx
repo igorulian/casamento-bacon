@@ -1,6 +1,7 @@
 import GiftType from "@/types/gift";
 import { Trash } from "@phosphor-icons/react";
 import { Lora } from "next/font/google";
+import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 
@@ -39,6 +40,9 @@ const Carrinho = () => {
 
   return (
     <main className="bg-white -mt-16 px-4 flex min-h-screen min-w-screen flex-col justify-center items-center">
+      <Head>
+        <title>Carrinho</title>
+      </Head>
       <div className="w-full lg:w-2/5 bg-white p-2 md:p-8 flex flex-col items-center rounded-xl h-screen md:h-auto min-h-96 justify-between">
         <h4 className={`mt-20 md:mt-0 text-primary mb-8 ${lora.className}`}>
           Carrinho

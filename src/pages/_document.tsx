@@ -6,7 +6,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 export default function Document() {
   return (
     <Html lang="en">
-      <Head title="Casamento Bacon" />
+      <Head title="Casamento Bacon"></Head>
       <body>
         <Header.Container>
           <Header.Button href="/">Cerimonia</Header.Button>

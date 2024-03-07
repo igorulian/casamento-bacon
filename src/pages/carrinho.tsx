@@ -33,10 +33,14 @@ const Carrinho = () => {
     setCart(cart);
   }
 
+  function goToPayment() {
+    window.location.href = "pagamento";
+  }
+
   return (
     <main className="bg-white -mt-16 px-4 flex min-h-screen min-w-screen flex-col justify-center items-center">
       <div className="w-full lg:w-2/5 bg-white p-2 md:p-8 flex flex-col items-center rounded-xl h-screen md:h-auto min-h-96 justify-between">
-        <h4 className={`mt-16 md:mt-0 text-primary mb-8 ${lora.className}`}>
+        <h4 className={`mt-20 md:mt-0 text-primary mb-8 ${lora.className}`}>
           Carrinho
         </h4>
         <div className="flex flex-col gap-4 w-full">
@@ -97,6 +101,7 @@ const Carrinho = () => {
                   ? "bg-primary"
                   : "bg-gray-300 opacity-50 cursor-pointer"
               }`}
+              onClick={goToPayment}
             >
               Efetuar pagamento
             </button>

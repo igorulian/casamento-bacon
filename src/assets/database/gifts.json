@@ -9,11 +9,11 @@
   },
   {
     "name": "Jogo de lençol 4 peças 100% algodão",
-    "price": 170
+    "price": 170.0
   },
   {
     "name": "Cobre leito com 6 peças",
-    "price": 219.99
+    "price": 219.9
   },
   {
     "name": "Copos de whisky 6 peças",
@@ -21,7 +21,7 @@
   },
   {
     "name": "Porta guardanapos",
-    "price": 29.99
+    "price": 29.9
   },
   {
     "name": "Porta papel toalha",
@@ -29,7 +29,7 @@
   },
   {
     "name": "Kit banheiro",
-    "price": 100
+    "price": 100.0
   },
   {
     "name": "2 tapetes para banheiro",

@@ -1,6 +1,17 @@
 import Image from "next/image";
 
 const Produto = ({ product }: { product: { name: string; price: number } }) => {
+  
+  function addToCart(){
+    const localCart = localStorage.getItem('@cart')
+    
+    const cart = localCart ? JSON.parse(localCart) : []
+    cart.push(product)
+    localStorage.setItem('@cart', JSON.stringify(cart))
+
+    window.location.href = 'carrinho'
+  }
+  
   return (
     <div className="flex justify-between flex-col items-center p-4 rounded-lg bg-white h-auto w-40 sm:w-56 ">
       <Image
@@ -12,7 +23,7 @@ const Produto = ({ product }: { product: { name: string; price: number } }) => {
         {product.name}
       </span>
       <span className="text-base mb-2 text-color-txt">R${product.price}</span>
-      <button className="flex text-lg items-center justify-center w-full p-2 text-white bg-primary rounded-lg">
+      <button onClick={addToCart} className="flex text-lg items-center justify-center w-full p-2 text-white bg-primary rounded-lg">
         Presentear
       </button>
     </div>

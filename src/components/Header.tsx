@@ -20,7 +20,7 @@ const HeaderContainer = ({ children, ...props }: ComponentProps<"button">) => {
   return (
     <header
       {...props}
-      className="bg-white z-20 sticky h-16  top-0 w-full p-4 flex items-center justify-center gap-8"
+      className="bg-white shadow-md z-20 sticky h-16  top-0 w-full p-4 flex items-center justify-center gap-8"
     >
       {children}
     </header>

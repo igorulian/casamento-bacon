@@ -1,117 +1,146 @@
 [
   {
+    "id": 1,
     "name": "Aumente em 30% a chance de pegar o buquê",
     "price": 50.0
   },
   {
+    "id": 2,
     "name": "Cafeteira",
     "price": 600.0
   },
   {
+    "id": 3,
     "name": "Jogo de lençol 4 peças 100% algodão",
     "price": 170.0
   },
   {
+    "id": 4,
     "name": "Cobre leito com 6 peças",
     "price": 219.9
   },
   {
+    "id": 5,
     "name": "Copos de whisky 6 peças",
     "price": 70.0
   },
   {
+    "id": 6,
     "name": "Porta guardanapos",
     "price": 29.9
   },
   {
+    "id": 7,
     "name": "Porta papel toalha",
     "price": 39.9
   },
   {
+    "id": 8,
     "name": "Kit banheiro",
     "price": 100.0
   },
   {
+    "id": 9,
     "name": "2 tapetes para banheiro",
     "price": 49.9
   },
   {
+    "id": 10,
     "name": "Aparelho de jantar 2 peças",
     "price": 382.4
   },
   {
+    "id": 11,
     "name": "Tapete para sala",
     "price": 123.2
   },
   {
+    "id": 12,
     "name": "Sofá 4 lugares reclinável",
     "price": 123.2
   },
   {
+    "id": 13,
     "name": "Sofá cama",
     "price": 123.2
   },
   {
+    "id": 14,
     "name": "Batedeira planetária",
     "price": 123.2
   },
   {
+    "id": 15,
     "name": "Conjunto de copos",
     "price": 123.2
   },
   {
+    "id": 16,
     "name": "Jogo de taças para vinho",
     "price": 123.2
   },
   {
+    "id": 17,
     "name": "Microondas 31L",
     "price": 100.0
   },
   {
+    "id": 18,
     "name": "Robô aspirador para o noivo terceirizar o trabalho",
     "price": 100.0
   },
   {
+    "id": 19,
     "name": "Panos de microfibra para limpeza (Kit com 3)",
     "price": 100.0
   },
   {
+    "id": 20,
     "name": "Panos de prato (2 unidades)",
     "price": 100.0
   },
   {
+    "id": 21,
     "name": "6 assadeiras de vidro com tampa",
     "price": 100.0
   },
   {
+    "id": 22,
     "name": "Jogo de panelas com revestimento em cerâmica",
     "price": 100.0
   },
   {
+    "id": 23,
     "name": "Petisqueira de bambu",
     "price": 100.0
   },
   {
+    "id": 24,
     "name": "Utensílios para queijo",
     "price": 100.0
   },
   {
+    "id": 25,
     "name": "Bowl cerâmica (unidade)",
     "price": 100.0
   },
   {
+    "id": 26,
     "name": "Cabeceira cama de casal",
     "price": 100.0
   },
   {
+    "id": 27,
     "name": "Estante para livros",
     "price": 100.0
   },
   {
+    "id": 28,
     "name": "Mesa para home office",
     "price": 100.0
   },
   {
+    "id": 29,
     "name": "Conjunto mesa + cadeira dobrável",
     "price": 100.0
   }

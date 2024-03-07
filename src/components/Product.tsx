@@ -1,6 +1,10 @@
 import Image from "next/image";
 
-const Produto = ({ product }: { product: { name: string; price: number } }) => {
+const Produto = ({
+  product,
+}: {
+  product: { name: string; price: number; id: number };
+}) => {
   function addToCart() {
     const localCart = localStorage.getItem("@cart");
 
@@ -15,8 +19,8 @@ const Produto = ({ product }: { product: { name: string; price: number } }) => {
     <div className="flex shadow-lg gap-2 justify-between flex-col items-center p-4 rounded-lg bg-white h-auto w-40 md:w-56">
       <Image
         alt="A"
-        src={require("../assets/gifts/gift_1.jpg")}
-        className="w-100 bg-black h-100 rounded-md"
+        src={require(`../assets/gifts/gift_${product.id}.jpg`)}
+        className="w-100 bg-black h-100 rounded-md aspect-square"
       />
       <div className="flex flex-col h-full justify-between items-center">
         <span className="text-color-txt text-xs sm:text-sm text-center">

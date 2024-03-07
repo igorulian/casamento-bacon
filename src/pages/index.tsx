@@ -3,7 +3,11 @@ import { Lora } from "next/font/google";
 import localFont from "next/font/local";
 import Section from "@/components/Section";
 import { twMerge } from "tailwind-merge";
-import CountDown from "@/components/CountDown";
+import dynamic from "next/dynamic";
+
+const CountDown = dynamic(() => import("@/components/CountDown"), {
+  ssr: false,
+});
 
 const lora = Lora({ subsets: ["latin"] });
 
@@ -17,9 +21,7 @@ const gistesy = localFont({
   ],
 });
 
-
 export default function Home() {
-
   return (
     <main className="bg-white flex min-h-screen min-w-screen flex-col items-center">
       <Section.Container className="md:flex-row  max-[768px]:max-h-[650px]">
@@ -79,7 +81,7 @@ export default function Home() {
           </Section.Title>
         </div>
 
-                <CountDown/>
+        <CountDown />
       </Section.Container>
 
       <Section.Container className="bg-white h-auto items-center px-0 md:px-40 p-8 pt-4 flex gap-8">

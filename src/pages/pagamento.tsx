@@ -41,7 +41,7 @@ const Pagamento = () => {
 
           <Canvas
             text={
-              "00020101021126940014br.gov.bcb.pix01364810c9b8-2455-4fa7-abf2-9bd5a93590940232uma mensagem legal aqui e outra5204000053039865802BR5920IGOR BIANCHINI ULIAN6009BORBOREMA62070503***6304ECF3"
+              "00020101021126360014br.gov.bcb.pix0114+55679821218405204000053039865802BR5923LINCON ULIAN TRAMONTANO6008BRASILIA62070503***63049661"
             }
             options={{
               errorCorrectionLevel: "M",

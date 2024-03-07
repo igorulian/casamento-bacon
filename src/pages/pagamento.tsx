@@ -6,6 +6,9 @@ import { useEffect, useMemo, useState } from "react";
 
 const lora = Lora({ subsets: ["latin"] });
 
+const CODE =
+  "00020101021126580014br.gov.bcb.pix013650dab449-7494-4e85-b2c1-fe73220aa3835204000053039865802BR5919BARBARA C BIANCHINI6011TRES LAGOAS62070503***63049E46";
+
 const Pagamento = () => {
   const [cart, setCart] = useState<GiftType[]>([]);
   const [coppied, setCoppied] = useState(false);
@@ -26,6 +29,35 @@ const Pagamento = () => {
     return t;
   }, [cart]);
 
+  function copyTextToClipboard(text: string) {
+    var textArea = document.createElement("textarea");
+    textArea.style.position = "fixed";
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.width = "2em";
+    textArea.style.height = "2em";
+    textArea.style.padding = "0";
+    textArea.style.border = "none";
+    textArea.style.outline = "none";
+    textArea.style.boxShadow = "none";
+    textArea.style.background = "transparent";
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+      var successful = document.execCommand("copy");
+      var msg = successful ? "bem-sucedido" : "sem sucesso";
+      console.log("Comando de cópia de texto foi " + msg);
+    } catch (err) {
+      console.log("Oops, não foi possível copiar");
+      window.prompt(
+        "Copie para a área de transferência: Ctrl+C e tecle Enter",
+        text
+      );
+    }
+    document.body.removeChild(textArea);
+  }
+
   return (
     <main className="bg-white -mt-16 px-4 flex min-h-screen min-w-screen flex-col justify-center items-center">
       <div className="w-full lg:w-2/5 bg-white p-2 md:p-8 flex flex-col items-center rounded-xl h-screen md:h-auto min-h-96 justify-between">
@@ -40,9 +72,7 @@ const Pagamento = () => {
           )}
 
           <Canvas
-            text={
-              "00020101021126360014br.gov.bcb.pix0114+55679821218405204000053039865802BR5923LINCON ULIAN TRAMONTANO6008BRASILIA62070503***63049661"
-            }
+            text={CODE}
             options={{
               errorCorrectionLevel: "M",
               scale: 4,
@@ -56,7 +86,8 @@ const Pagamento = () => {
 
           <button
             onClick={() => {
-              setCoppied((old) => !old);
+              copyTextToClipboard(CODE);
+              setCoppied(true);
             }}
             className="border-primary border-dotted bg-sky-50 border-[1px] mt-4 rounded-lg p-4 w-full max-w-80"
           >

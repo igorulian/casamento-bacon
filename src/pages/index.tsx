@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import Section from "@/components/Section";
 import { twMerge } from "tailwind-merge";
 import dynamic from "next/dynamic";
+import Footer from "@/components/Footer";
 
 const CountDown = dynamic(() => import("@/components/CountDown"), {
   ssr: false,
@@ -232,6 +233,8 @@ export default function Home() {
           </div>
         </div>
       </Section.Container>
+
+      <Footer />
     </main>
   );
 }

@@ -10,7 +10,6 @@ export default function Document() {
       <body>
         <Header.Container>
           <Header.Button href="/">Cerimonia</Header.Button>
-          <Header.Button href="/">Local</Header.Button>
           <Header.Button href="/">Contatos</Header.Button>
           <Header.Button href="presentes">Presentes</Header.Button>
         </Header.Container>

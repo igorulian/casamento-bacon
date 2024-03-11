@@ -108,8 +108,8 @@ const Pagamento = () => {
         <div className="flex w-full md:max-w-80 flex-col mt-4">
           {cart.length > 0 && (
             <div className="flex flex-row justify-end mb-4 text-2xl items-center w-full">
-              <p className=" text-color-txt mr-4">Valor:</p>
-              <p className=" text-color-txt">R${total}</p>
+              <p className={` text-color-txt mr-4 ${lora.className}`}>Valor:</p>
+              <p className={` text-color-txt ${lora.className}`}>R${total}</p>
             </div>
           )}
         </div>

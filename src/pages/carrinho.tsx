@@ -82,7 +82,9 @@ const Carrinho = () => {
                     alt="Excluir item"
                   />
                 </button>
-                <p className="text-color-txt">R${item.price}</p>
+                <p className={`text-color-txt ${lora.className}`}>
+                  R${item.price}
+                </p>
               </div>
             </div>
           ))}
@@ -90,8 +92,8 @@ const Carrinho = () => {
         <div className="flex w-full flex-col mt-4">
           {cart.length > 0 && (
             <div className="flex flex-row justify-end text-lg items-center w-full px-4">
-              <p className=" text-color-txt mr-2">Total:</p>
-              <p className=" text-color-txt">R${total}</p>
+              <p className={` text-color-txt mr-2 ${lora.className}`}>Total:</p>
+              <p className={` text-color-txt ${lora.className}`}>R${total}</p>
             </div>
           )}
           <div className="flex mt-8 w-full flex-row justify-between gap-4 items-center">

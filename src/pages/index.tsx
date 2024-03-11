@@ -29,14 +29,14 @@ export default function Home() {
       <Head>
         <title>Casamento Bacon</title>
       </Head>
-      <Section.Container className="md:flex-row  max-[768px]:max-h-[650px]">
+      <Section.Container className="md:flex-row relative max-[768px]:max-h-[650px]">
         <div className="md:w-full md:relative md:justify-center">
           <Image
             src={require("../assets/image.jpg")}
             alt="Barbara e Maicon"
             layout="fill"
             objectFit="cover"
-            className="opacity-90 md:h-auto max-[768px]:h-full max-[768px]:max-h-[500px]"
+            className="opacity-90 md:h-auto max-[768px]:h-full max-[768px]:max-h-[500px] md:-mt-0 -mt-20"
           />
         </div>
         <div
@@ -44,7 +44,7 @@ export default function Home() {
             right: -250,
             marginRight: "33%",
           }}
-          className="z-10 md:w-[500px] w-11/12 h-[400px] absolute md:top-60 md:left-auto max-[768px]:top-1/2 max-[768px]:left-1/2 max-[768px]:transform max-[768px]:-translate-x-1/2 max-[768px]:-translate-y-1/2 "
+          className="z-10 -bottom-20 md:w-[500px] w-11/12 h-[400px] absolute md:top-60 md:left-auto max-[768px]:top-1/2 max-[768px]:left-1/2 max-[768px]:transform max-[768px]:-translate-x-1/2 max-[768px]:-translate-y-1/4 "
         >
           <Image
             className="absolute z-0 right-0 top-0 w-40 rotate-180 scale-x-[-1]"

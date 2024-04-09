@@ -1,11 +1,12 @@
 import Image from "next/image";
-import { Lora } from "next/font/google";
+import { Libre_Barcode_39_Text, Lora } from "next/font/google";
 import localFont from "next/font/local";
 import Section from "@/components/Section";
 import { twMerge } from "tailwind-merge";
 import dynamic from "next/dynamic";
 import Footer from "@/components/Footer";
 import Head from "next/head";
+import { FormEventHandler, useEffect, useRef, useState } from "react";
 
 const CountDown = dynamic(() => import("@/components/CountDown"), {
   ssr: false,
@@ -24,6 +25,21 @@ const gistesy = localFont({
 });
 
 export default function Home() {
+  const formsInput = useRef<HTMLFormElement>(null);
+  const [confirmed, setConfirmed] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    formsInput.current?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+        setConfirmed(true);
+      }, 500);
+    });
+  }, []);
+
   return (
     <main className="bg-white flex min-h-screen min-w-screen flex-col items-center">
       <Head>
@@ -33,7 +49,7 @@ export default function Home() {
         <div className="md:w-full md:relative md:justify-center">
           <Image
             src={require("../assets/image.jpg")}
-            alt="Barbara e Maicon"
+            alt="Bárbara e Maicon"
             layout="fill"
             objectFit="cover"
             className="opacity-90 md:h-auto max-[768px]:h-full max-[768px]:max-h-[500px] md:-mt-0 -mt-20"
@@ -59,7 +75,8 @@ export default function Home() {
               )}
             >
               Barbara
-              <br />& Maicon
+              <br />
+              <span className="text-4xl">&</span> Maicon
             </h5>
             <div className="flex flex-row items-center gap-4">
               <Image
@@ -97,7 +114,7 @@ export default function Home() {
             alt="fro"
           />
           <Section.Title className={`text-color-txt ${lora.className}`}>
-            CERIMONIA E RECEPÇÃO
+            CERIMÔNIA E RECEPÇÃO
           </Section.Title>
         </div>
         <div className="md:max-w-[700px] relative min-h-64 w-full overflow-hidden aspect-[16/9] bg-slate-600 rounded-lg">
@@ -111,16 +128,28 @@ export default function Home() {
         </div>
         <p className="text-color-txt text-center md:max-w-[700px]">
           Gostaríamos muito de contar com a presença de todos vocês no momento
-          em que nossa união será abençoada diante de Deus. Escolhemos o Rancho
-          Art Eventos para esse momento! A cerimonia será realizada no amplo
-          gramado do rancho, deixando nosso dia do jeitinho que sempre sonhamos.
-          Tentaremos ser o mais breve e pontuais possível durante a cerimonia.
-          Logo após a recepção será no mesmo local.
-          <br />- Traje esporte fino.
+          em que nossa união será abençoada diante de Deus e de nossa família.
+          Escolhemos o Rancho Art Eventos para esse momento! A cerimônia será
+          realizada no amplo gramado do rancho, deixando nosso dia do jeitinho
+          que sempre sonhamos. Tentaremos ser o mais breve e pontuais possível
+          durante a cerimônia. Logo após, a recepção será no mesmo local.
         </p>
-        <div className="w-full md:max-w-[700px] overflow-hidden aspect-[16/9] bg-slate-600  rounded-lg">
+        <ul>
+          <li className=" text-color-txt text-center md:max-w-[700px] mb-2">
+            <b>-</b> Traje esporte fino.
+          </li>
+          <li className=" text-color-txt text-center md:max-w-[700px] mb-2">
+            <b>-</b> Horário de Brasília;
+          </li>
+          <li className=" text-color-txt text-center md:max-w-[700px] mb-2">
+            <b>-</b> Na cidade costuma-se ter polícia realizando
+            <br />
+            bafômetros, aconselhamos a buscar por táxis e Ubers.
+          </li>
+        </ul>
+        <div className="w-full md:max-w-[700px] overflow-hidden aspect-[16/9] bg-color-txt  rounded-lg">
           <iframe
-            src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBRQRRY6z_IciTrG612AOj1iNWJQwt9eBw&q=-20.2724477,-50.9481148"
+            src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBRQRRY6z_IciTrG612AOj1iNWJQwt9eBw&q=-20.272312,-50.949289"
             className="w-full h-full border-none"
             loading="lazy"
           ></iframe>
@@ -238,14 +267,64 @@ export default function Home() {
         </div>
       </Section.Container>
 
-      <Section.Container className="h-auto min-h-[500px] py-4">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSfccDQoDV7vIavCHSJiwOdq9h2-AT5Z1naa_x8XXEZN3nb34Q/viewform?embedded=true"
-          className="w-full border-none outline-none"
-          height={500}
-        >
-          Carregando…
-        </iframe>
+      <Section.Container className="h-auto min-h-[500px] items-center py-4">
+        <div className="flex flex-col items-center">
+          <Image
+            className="w-10 rotate-90 scale-x-[-1]"
+            src={require("../assets/fro.svg")}
+            alt="fro"
+          />
+          <Section.Title className={`text-color-txt ${lora.className}`}>
+            CONFIRMAÇÃO DE PRESENÇA
+          </Section.Title>
+        </div>
+        <div className="md:max-w-[700px] px-4 relative w-full rounded-lg flex items-center justify-center h-full">
+          {confirmed ? (
+            <span className="text-color-txt mt-[25%]">
+              Presença confirmada com sucesso!
+            </span>
+          ) : (
+            <form
+              className="w-full"
+              ref={formsInput}
+              action="https://docs.google.com/forms/d/e/1FAIpQLSfccDQoDV7vIavCHSJiwOdq9h2-AT5Z1naa_x8XXEZN3nb34Q/formResponse"
+            >
+              <div className="flex flex-col gap-2 mt-4">
+                <label className="text-primary">Nome</label>
+                <input
+                  style={{ outline: "none !important;" }}
+                  className="input border rounded-md border-primary p-4 text-color-txt"
+                  type="text"
+                  name="entry.1202067578"
+                  placeholder="Digite seu nome"
+                  disabled={loading}
+                />
+              </div>
+              <div className="flex flex-col gap-2 mt-4">
+                <label className="text-primary">Quantas pessoas</label>
+                <input
+                  style={{ outline: "none !important;" }}
+                  className="input border rounded-md border-primary p-4 text-color-txt"
+                  type="number"
+                  name="entry.360739388"
+                  placeholder="Ex: 2"
+                  min="1"
+                  max="99"
+                  disabled={loading}
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={loading}
+                className={`flex w-full p-4 border-none justify-center rounded-md mt-8 ${
+                  loading ? "bg-neutral-200 " : "bg-primary"
+                }`}
+              >
+                {loading ? "Carregando..." : "Confirmar"}
+              </button>
+            </form>
+          )}
+        </div>
       </Section.Container>
 
       <Footer />

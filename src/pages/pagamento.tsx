@@ -30,6 +30,19 @@ const Pagamento = () => {
     return t;
   }, [cart]);
 
+  const formatedTotal = useMemo(() => {
+    const parteInteira = Math.floor(total);
+    const parteDecimal = (total - parteInteira) * 100;
+
+    const parteInteiraFormatada = parteInteira.toLocaleString("pt-BR");
+
+    const parteDecimalFormatada = parteDecimal.toFixed(0).padStart(2, "0");
+
+    const valorFormatado = `R$ ${parteInteiraFormatada},${parteDecimalFormatada}`;
+
+    return valorFormatado;
+  }, [total]);
+
   function copyTextToClipboard(text: string) {
     var textArea = document.createElement("textarea");
     textArea.style.position = "fixed";
@@ -109,7 +122,9 @@ const Pagamento = () => {
           {cart.length > 0 && (
             <div className="flex flex-row justify-end mb-4 text-2xl items-center w-full">
               <p className={` text-color-txt mr-4 ${lora.className}`}>Valor:</p>
-              <p className={` text-color-txt ${lora.className}`}>R${total}</p>
+              <p className={` text-color-txt ${lora.className}`}>
+                {formatedTotal}
+              </p>
             </div>
           )}
         </div>

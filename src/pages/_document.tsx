@@ -9,7 +9,7 @@ export default function Document() {
       <Head title="Casamento Bacon"></Head>
       <body>
         <Header.Container>
-          <Header.Button href="/">Cerimonia</Header.Button>
+          <Header.Button href="/">Cerimônia</Header.Button>
           <Header.Button href="/">Contatos</Header.Button>
           <Header.Button href="presentes">Presentes</Header.Button>
         </Header.Container>

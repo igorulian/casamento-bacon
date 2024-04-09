@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useMemo } from "react";
 
 const Produto = ({
   product,
@@ -15,6 +16,19 @@ const Produto = ({
     window.location.href = "carrinho";
   }
 
+  const formatedPrice = useMemo(() => {
+    const parteInteira = Math.floor(product.price);
+    const parteDecimal = (product.price - parteInteira) * 100;
+
+    const parteInteiraFormatada = parteInteira.toLocaleString("pt-BR");
+
+    const parteDecimalFormatada = parteDecimal.toFixed(0).padStart(2, "0");
+
+    const valorFormatado = `R$ ${parteInteiraFormatada},${parteDecimalFormatada}`;
+
+    return valorFormatado;
+  }, [product.price]);
+
   return (
     <div className="flex shadow-lg gap-2 justify-between flex-col items-center p-4 rounded-lg bg-white h-auto w-40 md:w-56">
       <Image
@@ -26,7 +40,7 @@ const Produto = ({
         <span className="text-color-txt text-xs sm:text-sm text-center">
           {product.name}
         </span>
-        <span className="text-base text-gray-600">R${product.price}</span>
+        <span className="text-base text-gray-600">{formatedPrice}</span>
       </div>
       <button
         onClick={addToCart}

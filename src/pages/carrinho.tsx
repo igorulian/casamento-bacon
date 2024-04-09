@@ -38,14 +38,27 @@ const Carrinho = () => {
     window.location.href = "pagamento";
   }
 
+  function formatNumber(value: number) {
+    const parteInteira = Math.floor(value);
+    const parteDecimal = (value - parteInteira) * 100;
+
+    const parteInteiraFormatada = parteInteira.toLocaleString("pt-BR");
+
+    const parteDecimalFormatada = parteDecimal.toFixed(0).padStart(2, "0");
+
+    const valorFormatado = `R$ ${parteInteiraFormatada},${parteDecimalFormatada}`;
+
+    return valorFormatado;
+  }
+
   return (
     <main className="bg-white -mt-16 px-4 flex min-h-screen min-w-screen flex-col justify-center items-center">
       <Head>
-        <title>Carrinho</title>
+        <title>Lista de presentes</title>
       </Head>
       <div className="w-full lg:w-2/5 bg-white p-2 md:p-8 flex flex-col items-center rounded-xl h-screen md:h-auto min-h-96 justify-between">
         <h4 className={`mt-20 md:mt-0 text-primary mb-8 ${lora.className}`}>
-          Carrinho
+          Lista de presentes
         </h4>
         <div className="flex flex-col gap-4 w-full">
           {cart.length <= 0 && (
@@ -82,8 +95,8 @@ const Carrinho = () => {
                     alt="Excluir item"
                   />
                 </button>
-                <p className={`text-color-txt ${lora.className}`}>
-                  R${item.price}
+                <p className={`text-color-txt text-nowrap ${lora.className}`}>
+                  {formatNumber(item.price)}
                 </p>
               </div>
             </div>
@@ -93,7 +106,9 @@ const Carrinho = () => {
           {cart.length > 0 && (
             <div className="flex flex-row justify-end text-lg items-center w-full px-4">
               <p className={` text-color-txt mr-2 ${lora.className}`}>Total:</p>
-              <p className={` text-color-txt ${lora.className}`}>R${total}</p>
+              <p className={` text-color-txt ${lora.className}`}>
+                {formatNumber(total)}
+              </p>
             </div>
           )}
           <div className="flex mt-8 w-full flex-row justify-between gap-4 items-center">

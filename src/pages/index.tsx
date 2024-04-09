@@ -51,6 +51,7 @@ export default function Home() {
             src={require("../assets/image.jpg")}
             alt="Bárbara e Maicon"
             layout="fill"
+            loading="lazy"
             objectFit="cover"
             className="opacity-90 md:h-auto max-[768px]:h-full max-[768px]:max-h-[500px] md:-mt-0 -mt-20"
           />

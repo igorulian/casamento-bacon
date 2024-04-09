@@ -48,7 +48,7 @@ export default function Home() {
       <Section.Container className="md:flex-row relative max-[768px]:max-h-[650px]">
         <div className="md:w-full md:relative md:justify-center">
           <Image
-            src={require("../assets/image.jpg")}
+            src={require("../assets/image.webp")}
             alt="Bárbara e Maicon"
             layout="fill"
             loading="lazy"

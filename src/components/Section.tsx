@@ -14,6 +14,7 @@ const SectionContainer = ({
   ...props
 }: ComponentProps<"section">) => (
   <section
+    {...props}
     className={twMerge("flex flex-col h-dvh w-full bg-white ", props.className)}
   >
     {children}

@@ -107,7 +107,10 @@ export default function Home() {
         <CountDown />
       </Section.Container>
 
-      <Section.Container className="bg-white h-auto items-center px-0 md:px-40 p-8 pt-4 flex gap-8">
+      <Section.Container
+        id="section-cer"
+        className="bg-white h-auto items-center px-0 md:px-40 p-8 pt-4 flex gap-8"
+      >
         <div className="flex flex-col items-center">
           <Image
             className="w-10 rotate-90 scale-x-[-1]"
@@ -161,7 +164,10 @@ export default function Home() {
         </p>
       </Section.Container>
 
-      <Section.Container className="bg-primary-light h-auto justify-center items-center p-8 pt-4">
+      <Section.Container
+        id="section-contacts"
+        className="bg-primary-light h-auto justify-center items-center p-8 pt-4"
+      >
         <div className="flex flex-col items-center">
           <Image
             priority

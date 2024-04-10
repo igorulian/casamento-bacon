@@ -1,11 +1,17 @@
 import { Lora, Quicksand } from "next/font/google";
+import Link from "next/link";
 import { ComponentProps } from "react";
 import { twMerge } from "tailwind-merge";
 
 const lora = Lora({ subsets: ["latin"] });
 
-const HeaderButton = (props: ComponentProps<"a">) => (
-  <a
+type HeaderButtonProps = {
+  href: string;
+  children: React.ReactNode;
+};
+
+const HeaderButton = (props: HeaderButtonProps) => (
+  <Link
     style={{
       color: "#5D758D",
     }}
@@ -13,7 +19,7 @@ const HeaderButton = (props: ComponentProps<"a">) => (
     className={twMerge("text-base ", lora.className)}
   >
     {props.children}
-  </a>
+  </Link>
 );
 
 const HeaderContainer = ({ children, ...props }: ComponentProps<"button">) => {

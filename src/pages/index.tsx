@@ -77,7 +77,7 @@ export default function Home() {
             >
               Barbara
               <br />
-              <span className="text-4xl">&</span> Maicon
+              <span className="text-7xl">e</span> Maicon
             </h5>
             <div className="flex flex-row items-center gap-4">
               <Image
@@ -145,7 +145,7 @@ export default function Home() {
           <li className=" text-color-txt text-center md:max-w-[700px] mb-2">
             <b>-</b> Na cidade costuma-se ter polícia realizando
             <br />
-            bafômetros, aconselhamos a buscar por táxis e Ubers.
+            bafômetros, aconselhamos a busca por táxis e Ubers.
           </li>
         </ul>
         <div className="w-full md:max-w-[700px] overflow-hidden aspect-[16/9] bg-color-txt  rounded-lg">

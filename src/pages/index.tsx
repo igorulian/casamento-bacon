@@ -294,7 +294,7 @@ export default function Home() {
             <form
               className="w-full"
               ref={formsInput}
-              action="https://docs.google.com/forms/d/e/1FAIpQLSfccDQoDV7vIavCHSJiwOdq9h2-AT5Z1naa_x8XXEZN3nb34Q/formResponse"
+              action="https://docs.google.com/forms/d/e/1FAIpQLSde9pw7mOPuLP3g25R75h7DV6GYdYVd_9WyWlsVmfOJrouCIA/formResponse"
             >
               <div className="flex flex-col gap-2 mt-4">
                 <label className="text-primary">Nome</label>
@@ -302,7 +302,7 @@ export default function Home() {
                   style={{ outline: "none !important;" }}
                   className="input border rounded-md border-primary p-4 text-color-txt"
                   type="text"
-                  name="entry.1202067578"
+                  name="entry.1325086022"
                   placeholder="Digite seu nome"
                   disabled={loading}
                 />
@@ -313,7 +313,7 @@ export default function Home() {
                   style={{ outline: "none !important;" }}
                   className="input border rounded-md border-primary p-4 text-color-txt"
                   type="number"
-                  name="entry.360739388"
+                  name="entry.507466633"
                   placeholder="Ex: 2"
                   min="1"
                   max="99"

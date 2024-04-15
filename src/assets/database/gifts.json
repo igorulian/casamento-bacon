@@ -248,5 +248,55 @@
     "id": 50,
     "name": "1 consulta no otorrino para o noivo escutar a noiva",
     "price": 350.0
+  },
+  {
+    "id": 51,
+    "name": "Smart TV 55'",
+    "price": 3899.0
+  },
+  {
+    "id": 52,
+    "name": "Geladeira 397L",
+    "price": 4219.0
+  },
+  {
+    "id": 53,
+    "name": "Jogo americano 6 unidades",
+    "price": 70.9
+  },
+  {
+    "id": 54,
+    "name": "Ferro de passar roupa",
+    "price": 119.9
+  },
+  {
+    "id": 55,
+    "name": "Mixer 3 em 1",
+    "price": 210.9
+  },
+  {
+    "id": 56,
+    "name": "Processador de alimentos 8 em 1",
+    "price": 549.9
+  },
+  {
+    "id": 57,
+    "name": "Máquina de lavar roupa 16kg",
+    "price": 4029.0
+  },
+  {
+    "id": 58,
+    "name": "Grill cook & grill",
+    "price": 214.9
+  },
+  {
+    "id": 59,
+    "name": "Ventilador de chão",
+    "price": 139.9
+  },
+  {
+    "id": 60,
+    "name": "Jogo de toalha 5 peças",
+    "price": 184.99
   }
 ]

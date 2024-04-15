@@ -198,5 +198,55 @@
     "id": 40,
     "name": "Ajuda para que os noivos façam sua primeira viagem juntos",
     "price": 210.55
+  },
+  {
+    "id": 41,
+    "name": "Alexa (para noiva não mandar só no noivo)",
+    "price": 311.2
+  },
+  {
+    "id": 42,
+    "name": "Caneca especial para o noivo",
+    "price": 55.4
+  },
+  {
+    "id": 43,
+    "name": "Taxa para noiva não jogar o buque para o seu par",
+    "price": 290.99
+  },
+  {
+    "id": 44,
+    "name": "Garanta sua vaga no próximo churrasco",
+    "price": 300
+  },
+  {
+    "id": 45,
+    "name": "Vale amizade eterna com os noivos",
+    "price": 2080.0
+  },
+  {
+    "id": 46,
+    "name": "Seja nosso parente preferido. Não perca essa oportunidade",
+    "price": 2000.0
+  },
+  {
+    "id": 47,
+    "name": "Ajuda na compra do lote",
+    "price": 5200.0
+  },
+  {
+    "id": 48,
+    "name": "Ajuda para preparação para o primeiro filho",
+    "price": 180.0
+  },
+  {
+    "id": 49,
+    "name": "Ajuda para os cachorros não passarem fome depois que os noivos gastaram todo o dinheiro no casamento",
+    "price": 131.8
+  },
+  {
+    "id": 50,
+    "name": "1 consulta no otorrino para o noivo escutar a noiva",
+    "price": 350.0
   }
 ]

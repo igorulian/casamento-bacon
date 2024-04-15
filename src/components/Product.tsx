@@ -33,7 +33,7 @@ const Produto = ({
     <div className="flex shadow-lg gap-2 justify-between flex-col items-center p-4 rounded-lg bg-white h-auto w-40 md:w-56">
       <Image
         alt="A"
-        src={require(`../assets/gifts/gift_${product.id}.jpg`)}
+        src={require(`../assets/gifts/gift_${product.id}.jpg`) ?? ""}
         className="w-100 bg-black h-100 rounded-md aspect-square"
       />
       <div className="flex flex-col h-full justify-between items-center">

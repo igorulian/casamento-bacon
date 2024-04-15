@@ -143,5 +143,60 @@
     "id": 29,
     "name": "Conjunto mesa + cadeira dobrável",
     "price": 100.0
+  },
+  {
+    "id": 30,
+    "name": "1 ano de fezinha para os noivos",
+    "price": 70.0
+  },
+  {
+    "id": 31,
+    "name": "Um mês de aluguel para os noivos",
+    "price": 1000.0
+  },
+  {
+    "id": 32,
+    "name": "2 meses de conta de água paga para os noivos",
+    "price": 150.0
+  },
+  {
+    "id": 33,
+    "name": "Um mês de academia para o noivo perder a barriguinha",
+    "price": 80.0
+  },
+  {
+    "id": 34,
+    "name": "Cobertor para Bárbara estar sempre coberta de razão",
+    "price": 50.0
+  },
+  {
+    "id": 35,
+    "name": "Garantia de primeiro lugar na fila do buffet",
+    "price": 70.0
+  },
+  {
+    "id": 36,
+    "name": "Jogo da vida para aprendermos a viver",
+    "price": 60.0
+  },
+  {
+    "id": 37,
+    "name": "Ajuda para aposentadoria",
+    "price": 150.0
+  },
+  {
+    "id": 38,
+    "name": "1 ano sem propagandas no Spotify para os noivos",
+    "price": 200.0
+  },
+  {
+    "id": 39,
+    "name": "Garantia da casa dos noivos estar limpa na sua próxima visita",
+    "price": 156.8
+  },
+  {
+    "id": 40,
+    "name": "Ajuda para que os noivos façam sua primeira viagem juntos",
+    "price": 210.55
   }
 ]

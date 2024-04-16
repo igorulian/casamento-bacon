@@ -31,7 +31,6 @@ export default function Home() {
 
   useEffect(() => {
     formsInput.current?.addEventListener("submit", (e) => {
-      e.preventDefault();
       setLoading(true);
       setTimeout(() => {
         setLoading(false);
@@ -304,7 +303,6 @@ export default function Home() {
                   type="text"
                   name="entry.1325086022"
                   placeholder="Digite seu nome"
-                  disabled={loading}
                 />
               </div>
               <div className="flex flex-col gap-2 mt-4">
@@ -317,12 +315,10 @@ export default function Home() {
                   placeholder="Ex: 2"
                   min="1"
                   max="99"
-                  disabled={loading}
                 />
               </div>
               <button
                 type="submit"
-                disabled={loading}
                 className={`flex w-full p-4 border-none justify-center rounded-md mt-8 ${
                   loading ? "bg-neutral-200 " : "bg-primary"
                 }`}

@@ -1,5 +1,6 @@
 type GiftType = {
     name: string,
+    id: number,
     price: number
 }
 

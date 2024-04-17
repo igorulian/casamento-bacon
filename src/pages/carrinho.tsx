@@ -73,7 +73,7 @@ const Carrinho = () => {
               className="shadow-sm border-[1px] h-32 rounded-lg p-4 flex w-full flex-row justify-between py-4"
             >
               <Image
-                src={require("../assets/gifts/gift_1.jpg")}
+                src={require(`../assets/gifts/gift_${item.id}.jpg`)}
                 alt={item.name}
                 className="h-full w-auto rounded-lg"
               />

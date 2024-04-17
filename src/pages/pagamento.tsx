@@ -1,5 +1,5 @@
 import GiftType from "@/types/gift";
-import { Copy } from "@phosphor-icons/react";
+import { PiCopy } from "react-icons/pi";
 import { useQRCode } from "next-qrcode";
 import { Lora } from "next/font/google";
 import Head from "next/head";
@@ -109,7 +109,7 @@ const Pagamento = () => {
             className="border-primary border-dotted bg-sky-50 border-[1px] mt-4 rounded-lg p-4 w-full max-w-80"
           >
             <div className="text-primary w-full flex items-center text-center">
-              <Copy size={20} className="mr-2" color="#0097b2" />
+              <PiCopy size={20} className="mr-2" color="#0097b2" />
               {coppied ? (
                 <span>Código copiado!</span>
               ) : (
@@ -120,7 +120,7 @@ const Pagamento = () => {
         </div>
         <div className="flex w-full md:max-w-80 flex-col mt-4">
           {cart.length > 0 && (
-            <div className="flex flex-row justify-end mb-4 text-2xl items-center w-full">
+            <div className="flex flex-row justify-end mb-4 text-xl items-center w-full">
               <p className={` text-color-txt mr-4 ${lora.className}`}>Valor:</p>
               <p className={` text-color-txt ${lora.className}`}>
                 {formatedTotal}

@@ -1,4 +1,4 @@
-import { Lora, Quicksand } from "next/font/google";
+import { Lora } from "next/font/google";
 import Link from "next/link";
 import { ComponentProps } from "react";
 import { twMerge } from "tailwind-merge";

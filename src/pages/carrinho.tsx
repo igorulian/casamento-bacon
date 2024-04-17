@@ -1,5 +1,5 @@
 import GiftType from "@/types/gift";
-import { Trash } from "@phosphor-icons/react";
+import { PiTrash } from "react-icons/pi";
 import { Lora } from "next/font/google";
 import Head from "next/head";
 import Image from "next/image";
@@ -88,12 +88,7 @@ const Carrinho = () => {
                   }}
                   className="text-black flex justify-end w-auto"
                 >
-                  <Trash
-                    color="#f65d5d"
-                    size={24}
-                    weight="regular"
-                    alt="Excluir item"
-                  />
+                  <PiTrash color="#f65d5d" size={24} />
                 </button>
                 <p className={`text-color-txt text-nowrap ${lora.className}`}>
                   {formatNumber(item.price)}

@@ -183,28 +183,28 @@ export default function Home() {
                 Maquiagem e cabelo:
               </h4>
               <div className="flex md:flex-col md:flex-nowrap gap-4 flex-row flex-wrap md:justify-start justify-between">
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1 text-white">
                   <p className={`font-bold mt-2 ${lora.className}`}>
                     Jaqueline Santiago
                   </p>
                   <p className="text-sm">(17) 98210-7302</p>
                   <p className="text-sm">@jaquelinesantiagomakeup</p>
                 </div>
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1 text-white">
                   <p className={`font-bold mt-2 ${lora.className}`}>
                     Fernandes Neto
                   </p>
                   <p className="text-sm">(17) 99245-2246</p>
                   <p className="text-sm">@_fernandes_neto</p>
                 </div>
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1 text-white">
                   <p className={`font-bold mt-2 ${lora.className}`}>
                     Yhane Vieira
                   </p>
                   <p className="text-sm">(17) 98156-0007</p>
                   <p className="text-sm">@atelieyhanevieira</p>
                 </div>
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1 text-white">
                   <p className={`font-bold mt-2 ${lora.className}`}>
                     StudioCarolMake
                   </p>
@@ -218,28 +218,28 @@ export default function Home() {
                 Hotéis:
               </h4>
               <div className="flex md:flex-col md:flex-nowrap md:justify-start md:gap-0 gap-4 flex-row flex-wrap justify-between">
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1 text-white">
                   <p className={`font-bold mt-2 ${lora.className}`}>
                     Hotel Portal da Mata
                   </p>
                   <p className="text-sm">(17) 3641-1575</p>
                   <p className="text-sm">@hotelportaldamata</p>
                 </div>
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1 text-white">
                   <p className={`font-bold mt-2 ${lora.className}`}>
                     Hotel Santa Fé
                   </p>
                   <p className="text-sm">(17) 99149-2593</p>
                   <p className="text-sm">@hotel_santafe</p>
                 </div>
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1 text-white">
                   <p className={`font-bold mt-2 ${lora.className}`}>
                     Hotel Litani
                   </p>
                   <p className="text-sm">(17) 99140-9393</p>
                   <p className="text-sm">@hotel.litani</p>
                 </div>
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1 text-white">
                   <p className={`font-bold mt-2 ${lora.className}`}>
                     Hotel San Gennaro
                   </p>
@@ -253,7 +253,7 @@ export default function Home() {
                 Aplicativos de carona
               </h4>
               <div className="flex md:flex-col md:flex-nowrap md:justify-start md:gap-0 gap-4 flex-row flex-wrap justify-between w-full">
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1 text-white">
                   <p className={`font-bold mt-2 ${lora.className}`}>
                     Sampa Santa Fe do Sul
                   </p>
@@ -261,7 +261,7 @@ export default function Home() {
                   <p className="text-sm">@sampamobilitysantafe</p>
                 </div>
 
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1 text-white">
                   <p className={`font-bold mt-2 ${lora.className}`}>
                     Amigo car
                   </p>
